@@ -8,3 +8,5 @@ Carlos Quimbay
 
 Objetivo:
 Construir un sistema para la revisión y publicación de artículos en línea.
+
+Para mayor información, consulte la wiki.
