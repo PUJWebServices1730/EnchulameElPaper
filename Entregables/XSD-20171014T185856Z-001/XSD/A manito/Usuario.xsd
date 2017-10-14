@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+	<xs:element name="usuario">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:attribute name="nombre" type="xs:string"/>
+				<xs:attribute name="clave" type="xs:string"/>
+				<xs:attribute name="correo" type="xs:string"/>
+				<xs:attribute name="idUsuario" type="xs:integer"/>
+				</xs:sequence>	
+		</xs:complexType>
+	</xs:element>
+	</xs:schema>

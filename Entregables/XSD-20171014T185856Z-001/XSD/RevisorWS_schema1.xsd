@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.enchulame.com/" xmlns:tns="http://ws.enchulame.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="realizarRevision" type="tns:realizarRevision"/>
+
+  <xs:element name="realizarRevisionResponse" type="tns:realizarRevisionResponse"/>
+
+  <xs:element name="revisionesPendientes" type="tns:revisionesPendientes"/>
+
+  <xs:element name="revisionesPendientesResponse" type="tns:revisionesPendientesResponse"/>
+
+  <xs:element name="revisionesRealizadas" type="tns:revisionesRealizadas"/>
+
+  <xs:element name="revisionesRealizadasResponse" type="tns:revisionesRealizadasResponse"/>
+
+  <xs:complexType name="realizarRevision">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="realizarRevisionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revision">
+    <xs:sequence>
+      <xs:element name="comentario" type="xs:string" minOccurs="0"/>
+      <xs:element name="fechaRevision" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idRevision" type="xs:int"/>
+      <xs:element name="nota" type="xs:string" minOccurs="0"/>
+      <xs:element name="revisado" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesRealizadas">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesRealizadasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesPendientes">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesPendientesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
