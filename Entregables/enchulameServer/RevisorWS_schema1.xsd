@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.enchulame.com/" xmlns:tns="http://ws.enchulame.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="autor" type="tns:autor"/>
+
+  <xs:element name="crearRevisor" type="tns:crearRevisor"/>
+
+  <xs:element name="crearRevisorResponse" type="tns:crearRevisorResponse"/>
+
+  <xs:element name="editor" type="tns:editor"/>
+
+  <xs:element name="entrega" type="tns:entrega"/>
+
+  <xs:element name="evento" type="tns:evento"/>
+
+  <xs:element name="palabrasClaves" type="tns:palabrasClaves"/>
+
+  <xs:element name="palabrasClavesResponse" type="tns:palabrasClavesResponse"/>
+
+  <xs:element name="realizarRevision" type="tns:realizarRevision"/>
+
+  <xs:element name="realizarRevisionResponse" type="tns:realizarRevisionResponse"/>
+
+  <xs:element name="revision" type="tns:revision"/>
+
+  <xs:element name="revisionesPendientes" type="tns:revisionesPendientes"/>
+
+  <xs:element name="revisionesPendientesResponse" type="tns:revisionesPendientesResponse"/>
+
+  <xs:element name="revisionesRealizadas" type="tns:revisionesRealizadas"/>
+
+  <xs:element name="revisionesRealizadasResponse" type="tns:revisionesRealizadasResponse"/>
+
+  <xs:element name="revisor" type="tns:revisor"/>
+
+  <xs:element name="usuario" type="tns:usuario"/>
+
+  <xs:complexType name="palabrasClaves">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="palabrasClavesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="realizarRevision">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="realizarRevisionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revision">
+    <xs:sequence>
+      <xs:element name="comentario" type="xs:string" minOccurs="0"/>
+      <xs:element name="entregaidEntrega" type="tns:entrega" minOccurs="0"/>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idRevision" type="xs:int" minOccurs="0"/>
+      <xs:element name="nota" type="xs:float"/>
+      <xs:element name="revisado" type="xs:short" minOccurs="0"/>
+      <xs:element name="revisoridUsuario" type="tns:revisor" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entrega">
+    <xs:sequence>
+      <xs:element name="copyright" type="xs:short"/>
+      <xs:element name="estado" type="xs:string" minOccurs="0"/>
+      <xs:element name="eventoidEvento" type="tns:evento" minOccurs="0"/>
+      <xs:element name="fechaEnvio" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idEntrega" type="xs:int" minOccurs="0"/>
+      <xs:element name="notaFinal" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="evento">
+    <xs:sequence>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+      <xs:element name="editoridUsuario" type="tns:editor" minOccurs="0"/>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idEvento" type="xs:int" minOccurs="0"/>
+      <xs:element name="lineamientos" type="xs:string" minOccurs="0"/>
+      <xs:element name="lugar" type="xs:string" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editor">
+    <xs:sequence>
+      <xs:element name="idEditor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="apellido" type="xs:string" minOccurs="0"/>
+      <xs:element name="autor" type="tns:autor" minOccurs="0"/>
+      <xs:element name="clave" type="xs:string" minOccurs="0"/>
+      <xs:element name="correo" type="xs:string" minOccurs="0"/>
+      <xs:element name="editor" type="tns:editor" minOccurs="0"/>
+      <xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="revisor" type="tns:revisor" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="autor">
+    <xs:sequence>
+      <xs:element name="idAutor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisor">
+    <xs:sequence>
+      <xs:element name="idRevisor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesRealizadas">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesRealizadasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesPendientes">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="revisionesPendientesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:revision" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearRevisor">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:usuario" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearRevisorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.enchulame.com/" xmlns:tns="http://ws.enchulame.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="articulo" type="tns:articulo"/>
+
+  <xs:element name="autor" type="tns:autor"/>
+
+  <xs:element name="buscarArticulo" type="tns:buscarArticulo"/>
+
+  <xs:element name="buscarArticuloResponse" type="tns:buscarArticuloResponse"/>
+
+  <xs:element name="crearUsuario" type="tns:crearUsuario"/>
+
+  <xs:element name="crearUsuarioResponse" type="tns:crearUsuarioResponse"/>
+
+  <xs:element name="editarUsuario" type="tns:editarUsuario"/>
+
+  <xs:element name="editarUsuarioResponse" type="tns:editarUsuarioResponse"/>
+
+  <xs:element name="editor" type="tns:editor"/>
+
+  <xs:element name="eliminarUsuario" type="tns:eliminarUsuario"/>
+
+  <xs:element name="eliminarUsuarioResponse" type="tns:eliminarUsuarioResponse"/>
+
+  <xs:element name="entrega" type="tns:entrega"/>
+
+  <xs:element name="evento" type="tns:evento"/>
+
+  <xs:element name="iniciarSesion" type="tns:iniciarSesion"/>
+
+  <xs:element name="iniciarSesionResponse" type="tns:iniciarSesionResponse"/>
+
+  <xs:element name="revisor" type="tns:revisor"/>
+
+  <xs:element name="usuario" type="tns:usuario"/>
+
+  <xs:complexType name="eliminarUsuario">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buscarArticulo">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buscarArticuloResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:articulo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="articulo">
+    <xs:sequence>
+      <xs:element name="archivo" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="autoridUsuario" type="tns:autor" minOccurs="0"/>
+      <xs:element name="entregaidEntrega" type="tns:entrega" minOccurs="0"/>
+      <xs:element name="idArticulo" type="xs:int" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="resumen" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="autor">
+    <xs:sequence>
+      <xs:element name="idAutor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="apellido" type="xs:string" minOccurs="0"/>
+      <xs:element name="autor" type="tns:autor" minOccurs="0"/>
+      <xs:element name="clave" type="xs:string" minOccurs="0"/>
+      <xs:element name="correo" type="xs:string" minOccurs="0"/>
+      <xs:element name="editor" type="tns:editor" minOccurs="0"/>
+      <xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+      <xs:element name="revisor" type="tns:revisor" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editor">
+    <xs:sequence>
+      <xs:element name="idEditor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="revisor">
+    <xs:sequence>
+      <xs:element name="idRevisor" type="xs:int" minOccurs="0"/>
+      <xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entrega">
+    <xs:sequence>
+      <xs:element name="copyright" type="xs:short"/>
+      <xs:element name="estado" type="xs:string" minOccurs="0"/>
+      <xs:element name="eventoidEvento" type="tns:evento" minOccurs="0"/>
+      <xs:element name="fechaEnvio" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idEntrega" type="xs:int" minOccurs="0"/>
+      <xs:element name="notaFinal" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="evento">
+    <xs:sequence>
+      <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+      <xs:element name="editoridUsuario" type="tns:editor" minOccurs="0"/>
+      <xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="idEvento" type="xs:int" minOccurs="0"/>
+      <xs:element name="lineamientos" type="xs:string" minOccurs="0"/>
+      <xs:element name="lugar" type="xs:string" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editarUsuario">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="iniciarSesion">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="iniciarSesionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearUsuario">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg3" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:usuario" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

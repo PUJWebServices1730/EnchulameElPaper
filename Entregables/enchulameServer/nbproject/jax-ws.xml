@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="Usuario">
+      <implementation-class>com.enchulame.usuario.Usuario</implementation-class>
+    </service>
+    <service name="Revisor">
+      <implementation-class>com.enchulame.revisor.Revisor</implementation-class>
+    </service>
+    <service name="Autor">
+      <implementation-class>com.enchulame.autor.Autor</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

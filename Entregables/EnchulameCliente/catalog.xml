@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:20844/enchulameServer/AutorService?wsdl" uri="xml-resources/web-service-references/AutorService/wsdl/localhost_20844/enchulameServer/AutorService.wsdl"/>
+    <system systemId="http://localhost:20844/enchulameServer/AutorService?wsdl=1" uri="xml-resources/web-service-references/AutorService/wsdl/localhost_20844/enchulameServer/AutorService.wsdl_1.wsdl"/>
+    <system systemId="http://localhost:20844/enchulameServer/AutorService?xsd=1" uri="xml-resources/web-service-references/AutorService/wsdl/localhost_20844/enchulameServer/AutorService.xsd_1.xsd"/>
+    <system systemId="http://DESKTOP-QGM1P88:20844/enchulameServer/UsuarioService?wsdl" uri="xml-resources/web-service-references/UsuarioService/wsdl/DESKTOP-QGM1P88_20844/enchulameServer/UsuarioService.wsdl"/>
+    <system systemId="http://DESKTOP-QGM1P88:20844/enchulameServer/UsuarioService?wsdl=1" uri="xml-resources/web-service-references/UsuarioService/wsdl/DESKTOP-QGM1P88_20844/enchulameServer/UsuarioService.wsdl_1.wsdl"/>
+    <system systemId="http://DESKTOP-QGM1P88:20844/enchulameServer/UsuarioService?xsd=1" uri="xml-resources/web-service-references/UsuarioService/wsdl/DESKTOP-QGM1P88_20844/enchulameServer/UsuarioService.xsd_1.xsd"/>
+    <system systemId="http://localhost:20844/enchulameServer/RevisorService?WSDL" uri="xml-resources/web-service-references/RevisorService/wsdl/localhost_20844/enchulameServer/RevisorService.wsdl"/>
+    <system systemId="http://localhost:20844/enchulameServer/RevisorService?wsdl=1" uri="xml-resources/web-service-references/RevisorService/wsdl/localhost_20844/enchulameServer/RevisorService.wsdl_1.wsdl"/>
+    <system systemId="http://localhost:20844/enchulameServer/RevisorService?xsd=1" uri="xml-resources/web-service-references/RevisorService/wsdl/localhost_20844/enchulameServer/RevisorService.xsd_1.xsd"/>
+</catalog>

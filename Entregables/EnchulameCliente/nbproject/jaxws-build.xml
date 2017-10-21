@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-UsuarioService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+        <property name="wsdl-UsuarioService" location="xml-resources/web-service-references/UsuarioService/wsdl/DESKTOP-QGM1P88_20844/enchulameServer/UsuarioService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/UsuarioService" destdir="${build.generated.dir}/jax-wsCache/UsuarioService" wsdl="${wsdl-UsuarioService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/enchulameServer/UsuarioService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-UsuarioService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/UsuarioService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-UsuarioService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/UsuarioService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/enchulame/usuario"/>
+    </target>
+    <target name="wsimport-client-RevisorService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/RevisorService"/>
+        <property name="wsdl-RevisorService" location="xml-resources/web-service-references/RevisorService/wsdl/localhost_20844/enchulameServer/RevisorService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/RevisorService" destdir="${build.generated.dir}/jax-wsCache/RevisorService" wsdl="${wsdl-RevisorService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/enchulameServer/RevisorService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-RevisorService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/RevisorService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/RevisorService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-RevisorService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/RevisorService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/enchulame/revisor"/>
+    </target>
+    <target name="wsimport-client-AutorService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AutorService"/>
+        <property name="wsdl-AutorService" location="xml-resources/web-service-references/AutorService/wsdl/localhost_20844/enchulameServer/AutorService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AutorService" destdir="${build.generated.dir}/jax-wsCache/AutorService" wsdl="${wsdl-AutorService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/enchulameServer/AutorService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-AutorService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AutorService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AutorService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AutorService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AutorService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/enchulame/autor"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-UsuarioService, wsimport-client-RevisorService, wsimport-client-AutorService"/>
+</project>

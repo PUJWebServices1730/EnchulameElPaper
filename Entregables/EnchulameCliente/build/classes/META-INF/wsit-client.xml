@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="mainclientconfig" 
+ >
+    <import location="UsuarioService.xml" namespace="http://usuario.enchulame.com/"/>
+    <import location="RevisorService.xml" namespace="http://revisor.enchulame.com/"/>
+    <import location="AutorService.xml" namespace="http://autor.enchulame.com/"/>
+</definitions>

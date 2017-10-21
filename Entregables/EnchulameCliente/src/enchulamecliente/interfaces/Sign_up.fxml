@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4df42;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enchulamecliente.controller.Sign_upController">
+   <children>
+      <TextField id="nombres" fx:id="nombres" layoutX="65.0" layoutY="184.0" prefHeight="35.0" prefWidth="300.0" promptText="Nombres" />
+      <TextField id="apellidos" fx:id="apellidos" layoutX="65.0" layoutY="233.0" prefHeight="35.0" prefWidth="300.0" promptText="Apellidos" />
+      <TextField id="email" fx:id="email" layoutX="64.0" layoutY="282.0" prefHeight="35.0" prefWidth="300.0" promptText="Correo electrónico" />
+      <PasswordField id="contrasena" fx:id="contrasena" layoutX="64.0" layoutY="332.0" prefHeight="35.0" prefWidth="300.0" promptText="Contraseña" />
+      <PasswordField id="confcontra" fx:id="confcontra" layoutX="64.0" layoutY="380.0" prefHeight="35.0" prefWidth="300.0" promptText="Confirmar contraseña" />
+      <Button id="login" layoutX="247.0" layoutY="459.0" mnemonicParsing="false" onAction="#clickRegistrar" prefHeight="47.0" prefWidth="300.0" style="-fx-background-color: #00b6bc;" text="Registrarse" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fill="#00b6bc" layoutX="259.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro usuario">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#00b6bc" layoutX="69.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos básicos">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="autor" layoutX="660.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" text="Autor" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="revisor" layoutX="433.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" text="Revisor" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="editor" layoutX="545.0" layoutY="189.0" mnemonicParsing="false" prefHeight="25.0" text="Editor" textFill="#1b1b1b">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </CheckBox>
+      <Text fill="#00b6bc" layoutX="433.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perfíles">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="363.0" layoutY="523.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Volver" textFill="#00b6bc">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Text fill="#00b6bc" layoutX="484.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione la especialización">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="mensaje" layoutX="64.0" layoutY="428.0" prefHeight="17.0" prefWidth="300.0" textFill="#fc0505">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ListView fx:id="abc" disable="true" layoutX="494.0" layoutY="265.0" prefHeight="151.0" prefWidth="166.0" />
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</Pane>

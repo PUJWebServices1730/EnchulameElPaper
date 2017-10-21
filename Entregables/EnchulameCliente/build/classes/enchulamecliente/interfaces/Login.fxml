@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enchulamecliente.controller.LoginController">
+   <children>
+      <ImageView fitHeight="605.0" fitWidth="421.0" layoutY="-1.0">
+         <image>
+            <Image url="team.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="417.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="400.0" style="-fx-background-color: #f4df42;">
+         <children>
+            <TextField id="email" layoutX="82.0" layoutY="287.0" prefHeight="35.0" prefWidth="237.0" promptText="Correo electrónico" />
+            <Button id="login" layoutX="82.0" layoutY="393.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="237.0" style="-fx-background-color: #00b6bc;" text="Iniciar Sesión" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="154.0" fitWidth="154.0" layoutX="118.0" layoutY="97.0">
+               <image>
+                  <Image url="avion-de-papel.png" />
+               </image>
+            </ImageView>
+            <PasswordField layoutX="82.0" layoutY="338.0" prefHeight="35.0" prefWidth="237.0" promptText="Contraseña" />
+            <Button id="guest" layoutX="82.0" layoutY="443.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="237.0" style="-fx-background-color: #f74531;" text="Invitado" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button id="registro" layoutX="77.0" layoutY="478.0" mnemonicParsing="false" onAction="#clickRegistro" style="-fx-background-color: transparent;" text="¿No posee cuenta? Registrese ahora." textFill="#00b6bc">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

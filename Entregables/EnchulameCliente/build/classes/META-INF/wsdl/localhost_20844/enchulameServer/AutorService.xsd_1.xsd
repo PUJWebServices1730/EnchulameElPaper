@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.enchulame.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.enchulame.com/">
+
+<xs:element name="anadirAutor" type="tns:anadirAutor"/>
+
+<xs:element name="anadirAutorResponse" type="tns:anadirAutorResponse"/>
+
+<xs:element name="articulo" type="tns:articulo"/>
+
+<xs:element name="autor" type="tns:autor"/>
+
+<xs:element name="autorsecundario" type="tns:autorsecundario"/>
+
+<xs:element name="buscarArticulo" type="tns:buscarArticulo"/>
+
+<xs:element name="buscarArticuloResponse" type="tns:buscarArticuloResponse"/>
+
+<xs:element name="crearArticulo" type="tns:crearArticulo"/>
+
+<xs:element name="crearArticuloResponse" type="tns:crearArticuloResponse"/>
+
+<xs:element name="crearAutor" type="tns:crearAutor"/>
+
+<xs:element name="crearAutorResponse" type="tns:crearAutorResponse"/>
+
+<xs:element name="editarArticulo" type="tns:editarArticulo"/>
+
+<xs:element name="editarArticuloResponse" type="tns:editarArticuloResponse"/>
+
+<xs:element name="editor" type="tns:editor"/>
+
+<xs:element name="eliminarArticulo" type="tns:eliminarArticulo"/>
+
+<xs:element name="eliminarArticuloResponse" type="tns:eliminarArticuloResponse"/>
+
+<xs:element name="entrega" type="tns:entrega"/>
+
+<xs:element name="enviarCopyright" type="tns:enviarCopyright"/>
+
+<xs:element name="enviarCopyrightResponse" type="tns:enviarCopyrightResponse"/>
+
+<xs:element name="evento" type="tns:evento"/>
+
+<xs:element name="revisor" type="tns:revisor"/>
+
+<xs:element name="usuario" type="tns:usuario"/>
+
+<xs:complexType name="eliminarArticulo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarArticuloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="anadirAutor">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="tns:autorsecundario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autorsecundario">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="articuloidArticulo" type="tns:articulo" minOccurs="0"/>
+<xs:element name="idAutorSecundario" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="articulo">
+<xs:sequence>
+<xs:element name="archivo" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="autoridUsuario" type="tns:autor" minOccurs="0"/>
+<xs:element name="entregaidEntrega" type="tns:entrega" minOccurs="0"/>
+<xs:element name="idArticulo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="resumen" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autor">
+<xs:sequence>
+<xs:element name="idAutor" type="xs:int" minOccurs="0"/>
+<xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="autor" type="tns:autor" minOccurs="0"/>
+<xs:element name="clave" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="editor" type="tns:editor" minOccurs="0"/>
+<xs:element name="idUsuario" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="revisor" type="tns:revisor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editor">
+<xs:sequence>
+<xs:element name="idEditor" type="xs:int" minOccurs="0"/>
+<xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="revisor">
+<xs:sequence>
+<xs:element name="idRevisor" type="xs:int" minOccurs="0"/>
+<xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="entrega">
+<xs:sequence>
+<xs:element name="copyright" type="xs:short"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+<xs:element name="eventoidEvento" type="tns:evento" minOccurs="0"/>
+<xs:element name="fechaEnvio" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idEntrega" type="xs:int" minOccurs="0"/>
+<xs:element name="notaFinal" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evento">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="editoridUsuario" type="tns:editor" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idEvento" type="xs:int" minOccurs="0"/>
+<xs:element name="lineamientos" type="xs:string" minOccurs="0"/>
+<xs:element name="lugar" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="anadirAutorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarArticulo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="editarArticuloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarArticulo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarArticuloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:articulo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="enviarCopyright">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="enviarCopyrightResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearArticulo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearArticuloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearAutor">
+<xs:sequence>
+<xs:element name="arg0" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearAutorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
